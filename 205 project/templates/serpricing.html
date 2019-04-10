@@ -1,0 +1,406 @@
+{%extends "base.html"%}
+{% block head %}
+<title>Az Cloud Service - Managed Dedicated Server</title>
+
+<style>
+	.head {
+        text-align: center;
+        font-family: "Stencil Std,fantasy";
+        font-weight: 800;}
+
+    .pricing-header{
+    	background-color: lightgray;
+    	text-align: center;
+    	font-size: 24px;
+    	font-weight: 600;}
+
+    .tab button {
+  	background-color: inherit;
+  	float: left;
+  	border: none;
+  	outline: none;
+  	cursor: pointer;
+  	padding: 14px 16px;
+  	transition: 0.3s;
+  	font-size: 17px;}
+
+	.tab button:hover {
+  	background-color: #ddd;}
+
+	.tab button.active {
+  	background-color: #ccc;}
+	
+	.tabcontent {
+  	display: none;
+  	padding: 6px 12px;
+  	border: 1px solid #ccc;
+  	border-top: none;}
+
+  	.button{
+        text-align: center;
+        margin: 4px 4px;
+        padding: 5px 10px;}
+
+</style>
+
+{% endblock %}
+{% block main%}
+    <!--Container divide the sections-->
+    <div class="container" class=".col-sm-4" style="padding-left:20%; padding-right:20%; padding-top: 3%">
+    	<h1 class="head">Managed Dedicated Server</h1>
+    <!--Server List Tab-->
+    <div class="tab">
+    	<button class="tablinks active" onclick="openTab(event,'monthlylist')" id="defaultOpen">Monthly</button>
+    	<button class="tablinks" onclick="openTab(event,'annualylist')">Annualy</button>
+    </div>
+    <!--Monthly Payment Tab-->
+    	<div id="monthlylist" class="tabcontent">
+	        <div class="page">
+	        <br>
+	        <br>
+	            <div class="vc_row-full-width vc_clearfix"></div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server1">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Basic Managed Server</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 1,798 /Month</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1001</li>
+	                                        <li>1 x Intel E5-2630 Series CPU</li>
+	                                        <li>6 x CPU Core</li>
+	                                        <li>16GB Memory</li>
+	                                        <li>2 x 1TB / 2 x 250GB SSD Hard Disk</li>
+	                                        <li>1 Comodo PositiveSSL</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERMS1">Order Now</button>
+                                    </form>
+                                </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server2">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Standard Managed Server</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 2,278 /Month</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1002</li>
+	                                        <li>1 x Intel E5-2630 Series CPU</li>
+	                                        <li>6 x CPU Core</li>
+	                                        <li>32GB Memory</li>
+	                                        <li>2 x 2TB / 2 x 500GB SSD Hard Disk</li>
+	                                        <li>1 Comodo PositiveSSL</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERMS2">Order Now</button>
+                                    </form>
+                                </div>
+                            </div>
+	                    </div>
+	                </div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server3">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Advanced Managed Server</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 2,278 /Month</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Mode: DS1003</li>
+	                                        <li>2 x Intel E5-2630 Series CPU</li>
+	                                        <li>8 x CPU Core</li>
+	                                        <li>32GB Memory</li>
+	                                        <li>2 X 1TB / 2 X 250GB SSD Hard Disk</li>
+	                                        <li>1 GeoTrust QuickSSL Premium</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERMS3">Order Now</button>
+                                    </form>
+	                        	</div>
+	                    	</div>
+	                	</div>
+	            	</div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server4">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Standard Managed Server (Dual-Core CPU)</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 2,758 /Month</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1004</li>
+	                                        <li>2 x Intel E5-2630 Series CPU</li>
+	                                        <li>2 x 6 CPU Core</li>
+	                                        <li>64GB Memory</li>
+	                                        <li>2 X 2TB / 2 X 500GB SSD Hard Disk</li>
+	                                        <li>1 Comodo PositiveSSL</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERMD1">Order Now</button>
+                                    </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server5">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Advanced Managed Server (Dual-Core CPU)</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 3,388 /Month</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1005</li>
+	                                        <li>2 X Intel E5-2680 V2 Series CPU</li>
+	                                        <li>2 x 8 CPU Core</li>
+	                                        <li>64GB Memory</li>
+	                                        <li>2 x 2TB / 2 x 500GB SSD Hard Disk</li>
+	                                        <li>1 GeoTrust QuickSSL Premium</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERMD2">Order Now</button>
+                                    </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server6">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Professional Managed Server (Dual-Core CPU)</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 4,018 /Month</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1006</li>
+	                                        <li>2 X Intel E5-2680 V2 Series CPU</li>
+	                                        <li>2 x 8 CPU Core</li>
+	                                        <li>96GB Memory</li>
+	                                        <li>2 x 2TB / 2 x 500GB SSD Hard Disk</li>
+	                                        <li>1 GeoTrust QuickSSL Premium</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                    </ul>
+	                                </div> 
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERMD3">Order Now</button>
+                                    </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    <!--Annualy Payment Tab-->
+	    <div id="annualylist" class="tabcontent">
+	        <div class="page">
+	        <br>
+	        <br>
+	            <div class="vc_row-full-width vc_clearfix"></div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server1">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Basic Managed Server</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 17,988 /Year</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1001</li>
+	                                        <li>1 x Intel E5-2630 Series CPU</li>
+	                                        <li>6 x CPU Core</li>
+	                                        <li>16GB Memory</li>
+	                                        <li>2 x 1TB / 2 x 250GB SSD Hard Disk</li>
+	                                        <li>1 Comodo PositiveSSL</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                        <li>HK$1,499/month Prepaid Annually</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERYS1">Order Now</button>
+                                    </form>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server2">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Standard Managed Server</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 22,788 /Year</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1002</li>
+	                                        <li>1 x Intel E5-2630 Series CPU</li>
+	                                        <li>6 x CPU Core</li>
+	                                        <li>32GB Memory</li>
+	                                        <li>2 x 2TB / 2 x 500GB SSD Hard Disk</li>
+	                                        <li>1 Comodo PositiveSSL</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                        <li>HK$1,899/month Prepaid Annually</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERYS2">Order Now</button>
+                                    </form>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server3">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Advanced Managed Server</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 22,788 /Year</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Mode: DS1003</li>
+	                                        <li>2 x Intel E5-2630 Series CPU</li>
+	                                        <li>8 x CPU Core</li>
+	                                        <li>32GB Memory</li>
+	                                        <li>2 X 1TB / 2 X 250GB SSD Hard Disk</li>
+	                                        <li>1 GeoTrust QuickSSL Premium</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                        <li>HK$1,899/month Prepaid Annually</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERYS3">Order Now</button>
+                                    </form>
+	                        	</div>
+	                    	</div>
+	                	</div>
+	            	</div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server4">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Standard Managed Server (Dual-Core CPU)</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 27,588 /Year</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1004</li>
+	                                        <li>2 x Intel E5-2630 Series CPU</li>
+	                                        <li>2 x 6 CPU Core</li>
+	                                        <li>64GB Memory</li>
+	                                        <li>2 X 2TB / 2 X 500GB SSD Hard Disk</li>
+	                                        <li>1 Comodo PositiveSSL</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                        <li>HK$2,299/month Prepaid Annually</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERYD1">Order Now</button>
+                                    </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server5">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Advanced Managed Server (Dual-Core CPU)</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 33,888 /Year</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1005</li>
+	                                        <li>2 X Intel E5-2680 V2 Series CPU</li>
+	                                        <li>2 x 8 CPU Core</li>
+	                                        <li>64GB Memory</li>
+	                                        <li>2 x 2TB / 2 x 500GB SSD Hard Disk</li>
+	                                        <li>1 GeoTrust QuickSSL Premium</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                        <li>HK$2,824/month Prepaid Annually</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERYD2">Order Now</button>
+                                    </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="wpb_column vc_column_container vc_col-sm-4 relative">
+	                    <div class="vc_column-inner ">
+	                        <div class="wpb_wrapper">
+	                            <div class="pricinglist" id="server6">
+	                                <div class="pricing-header">
+	                                    <p class="pricing-title">Professional Managed Server (Dual-Core CPU)</p>
+	                                    <p class="pricing-price"> <sup>HK$</sup> 40,188 /Year</p>
+	                                </div>
+	                                <div class="pricing-options">
+	                                    <ul>
+	                                        <li>Model: DS1006</li>
+	                                        <li>2 X Intel E5-2680 V2 Series CPU</li>
+	                                        <li>2 x 8 CPU Core</li>
+	                                        <li>96GB Memory</li>
+	                                        <li>2 x 2TB / 2 x 500GB SSD Hard Disk</li>
+	                                        <li>1 GeoTrust QuickSSL Premium</li>
+	                                        <li>Basic Version Server Management Service</li>
+	                                        <li>HK$3,349/month Prepaid Annually</li>
+	                                    </ul>
+	                                </div>
+	                                <form action="cart" method="POST">
+                                        <button type="submit" class="button" id="productID" name="productID" value="SERYD3">Order Now</button>
+                                    </form>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <script>
+		function openTab(evt, tabName) {
+		  var i, tabcontent, tablinks;
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+		    tabcontent[i].style.display = "none";
+		  }
+		  tablinks = document.getElementsByClassName("tablinks");
+		  for (i = 0; i < tablinks.length; i++) {
+		    tablinks[i].className = tablinks[i].className.replace("active", "");
+		  }
+		  document.getElementById(tabName).style.display = "block";
+		  evt.currentTarget.className += "active";
+		}
+		document.getElementById("defaultOpen").click();
+
+		</script>
+{% endblock %}

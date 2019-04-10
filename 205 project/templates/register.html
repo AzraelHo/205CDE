@@ -1,0 +1,107 @@
+{%extends "base.html"%}
+{% block head %}
+<title>Registration Page</title>
+<style>
+	.head{
+		text-align: center; 
+		font-family: "Stencil Std,fantasy"; 
+		font-weight: 800;
+	}
+
+	.container {
+		border-radius: 5px;
+		background-color: lightgray;
+		padding: 30px;
+	}
+
+	input[type=text] {
+		position: center;
+	  	width: 100%;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+
+	input[type=password] {
+		display: block;
+		position: center;
+	  	width: 100%;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+
+	input[type=submit] {
+		background-color:rgb(171, 204, 219);
+		color: white;
+		margin-left: 75%;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	  	background-color: gray;
+	}
+
+	label{
+		font-family: "Stencil Std,fantasy";
+		font-weight: 500;
+		font-size: 20px;
+		padding-left: 10px; 
+	}
+	
+
+</style>
+{% endblock %}
+{% block main%}
+
+<!--Container divide the sections-->
+<div class=".col-sm-4" style="padding-left:20%; padding-right:20%; padding-top: 3%">
+	<div class="page">
+	<!--Registration Page-->
+	<h2 class="head">Registration</h2>
+		<br>
+		<div class="container">
+			<form action="" method="POST">
+				<div class="form-group">
+					<label for="username">Username:</label>
+					<input type="text" id="username" name="username" minlength="6" required>
+				</div>
+				<div class="form-group">
+					<label for="firstName">First Name:</label>
+					<input type="text" id="firstName" name="firstName" required>
+				</div>
+				<div class="form-group">
+					<label for="lastName">Last Name:</label>
+					<input type="text" id="lastName" name="lastName" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Email Address:</label>
+					<input type="text" id="email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="phoneNum">PhoneNum:</label>
+					<input type="text" id="phoneNum" name="phoneNum" minlength="8">
+				<div class="form-group">
+					<label for="password">Password:</label>
+					<input type="password" id="password" name="password" minlength="8" required>
+				<div class="form-group">
+					<label for="confirm">Confirm Password:</label>
+					<input type="password" id="confirm" name="confirm" minlength="8" required>
+				</div>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

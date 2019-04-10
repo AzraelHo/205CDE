@@ -1,0 +1,60 @@
+{%extends "base.html"%}
+{% block head %}
+<title>Az Cloud Service</title>
+<style>
+	/* Container holding the image and the text */
+	.banner{
+		position: relative;
+  		text-align: center;
+  		color: white;
+  		background-size:cover;
+	}
+	/* Centered text */
+	.centered {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 40px;
+		font-family: "Stencil Std, fantasy";
+		font-weight: 1000;
+	}
+	#p1 {
+		text-align:center;
+		font-size: 25px;
+		font-family: "Stencil Std, fantasy";
+		font-weight: 500;
+	}
+	#p2 {
+		font-size: 20px;
+		font-family: "Stencil Std, fantasy";
+		font-weight: 500;
+	}
+	h2 {
+		text-align:center;
+		font-family: "Stencil Std, fantasy";
+	}
+
+</style>
+<div class="page">
+	<!--Main Page-->
+	<div class="banner">
+		<img src="https://cdn.pixabay.com/photo/2017/03/20/21/00/server-2160321__340.jpg" width=100% height=200px>
+		<div class="centered">Az Cloud Service</div>
+	</div>
+{% endblock %}
+{% block main%}
+<!--Another container divide the sections-->
+	<div class="container" class=".col-sm-3" style="padding-left:20%; padding-right:20%; padding-top: 3%">
+		<br>
+		<h2 style="font-weight:600;">Our Main Service</h2>
+		<p id="p1">The main service of Az Cloud Service is provide customers safety hosting service.</p>
+		<br>
+		<img src="https://cloud.co.za/wp-content/uploads/2018/10/Choosing-the-Right-Cloud-Server.jpg" width=100% height=auto>
+		<br>
+		<br>
+		<h2> What is a cloud server and how does it work?</h2>
+		<p id="p2">A cloud server is a virtual server (rather than a physical server) running in a cloud computing environment. It is built, hosted and delivered via a cloud computing platform via the internet, and can be accessed remotely. They are also known as virtual servers. Cloud servers have all the software they require to run and can function as independent units.</p>
+	</div>
+</div>
+{% endblock%}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block head %}
+{% endblock %}
+
+<meta charset="UTF-8">
+<title>Az Cloud Service</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+	.navbar{
+		position: relative;
+		position: sticky;
+		top:0;
+	}
+	ul li a:hover {
+		background-color:rgb(151, 171, 179);
+	}
+	.dropdown-item:hover{
+		background-color:rgb(194, 216, 224);
+	}
+</style>
+
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<div class="main_logo">
+		<a href="{{url_for('index')}}">
+			<img alt="main-logo" src="{{url_for('static',filename='img/Az-PicArt.png')}}" height=35 width=35></a>  
+	</div>
+		<a class="navbar-brand" href="{{url_for('index')}}">Az Cloud Service</a>
+		<!--Toggle/collapsible button-->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!--links-->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<!--Dropdown-->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">SSL Web Hosting</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{url_for('hostpricing')}}">SSL Hosting Lite</a>
+					<a class="dropdown-item" href="{{url_for('hostpricing')}}">SSL Hosting Basic</a>
+					<a class="dropdown-item" href="{{url_for('hostpricing')}}">SSL Hosting Professional</a>
+					<a class="dropdown-item" href="{{url_for('hostpricing')}}">SSL Hosting Premium</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Dedicated Server</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="{{url_for('serverpricing')}}">Basic Managed Server</a>
+					<a class="dropdown-item" href="{{url_for('serverpricing')}}">Standard Managed Server</a>
+					<a class="dropdown-item" href="{{url_for('serverpricing')}}">Advanced Managed Server</a>
+					<a class="dropdown-item" href="{{url_for('serverpricing')}}">Standard Managed Server (Dual-Core CPU)</a>
+					<a class="dropdown-item" href="{{url_for('serverpricing')}}">Advanced Managed Server (Dual-Core CPU)</a>
+					<a class="dropdown-item" href="{{url_for('serverpricing')}}">Professional Managed Server (Dual-Core CPU)</a>
+
+				</div>	
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{url_for('about')}}">About Us</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{url_for('contactus')}}">Contact Us</a>
+			</li>
+			{% if session["username"] %}
+			<li class="nav-item">
+				<a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+			</li>
+			{% else %}
+			<li class="nav-item">
+				<a class="nav-link" href="{{url_for('login')}}">Login</a>
+			</li>
+			{% endif %}
+		</ul>
+	</nav>
+{% include "includes/_message.html"%}
+{% block main %}
+{% endblock %}
+</body>
+</html>

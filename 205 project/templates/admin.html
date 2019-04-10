@@ -1,0 +1,35 @@
+{%extends "base.html"%}
+{% block head %}
+<title>Admin page</title>
+	
+<style>
+	
+</style>
+{% endblock %}
+{% block main%}
+<!--Container divide the sections-->
+<div class="container"  class=".col-sm-4" style="padding-left:20%; padding-right:20%; padding-top: 3% ">
+	<!--Login-->
+	<div class="page">
+		<!--Contact Us Page-->
+		<button style="float:right; border-radius: 4px;"><a class="nav-link" href="{{url_for('logout')}}">Logout Admin</a></button>
+		<h1 class="head">Admin page</h1>
+
+		<br>
+		<div class="container">
+			<form action="/admin" method="POST">
+				<div class="form-group">
+					<label for="userID">Search user ID:</label>
+					<input type="text" id="userID" name="userID">
+				</div>
+				<input type="submit" value="Submit">
+			</form>
+			<form action="/admin" method="GET">
+				<div>
+					<p>{{session['userinfo']}}</p>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

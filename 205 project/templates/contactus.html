@@ -1,0 +1,83 @@
+{%extends "base.html"%}
+{% block head %}
+<title>Az Cloud Service - Contact Us</title>
+	
+<style>
+	.head{
+		text-align: center; 
+		font-family: "Stencil Std,fantasy"; 
+		font-weight: 800;
+	}
+
+	.container {
+		border-radius: 5px;
+		background-color: lightgray;
+		padding: 30px;
+	}
+
+	input[type=text], select, textarea {
+	  	width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+
+	input[type=submit] {
+		background-color:rgb(171, 204, 219);
+		color: white;
+		margin-left: 75%;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	  	background-color: gray;
+	}
+
+	label{
+		font-family: "Stencil Std,fantasy";
+		font-weight: 500;
+		font-size: 20px;
+		padding-left: 10px; 
+	}
+
+	
+</style>
+{% endblock %}
+{% block main%}
+<!--Container divide the sections-->
+<div class=".col-sm-4" style="padding-left:20%; padding-right:20%; padding-top: 3%">
+	<div class="page">
+		<!--Contact Us Page-->
+		<h1 class="head">Contact Us</h1>
+		<br>
+		<div class="container">
+			<form action="/contact" method="POST">
+				<div class="form-group">
+					<label for="contactName">Name:</label>
+					<input type="text" id="Name" name="Name" placeholder="Your name ..." required>
+				</div>
+				<div class="form-group">
+					<label for="contactEmail">Email:</label>
+					<input type="text" id="Email" name="Email" placeholder="Your email ..." required>
+				</div>
+				<div class="form-group">
+					<label for="Subject">Subject:</label>
+					<textarea id="Subject" name="Subject" placeholder="Write something ..." style="height: 200px" required></textarea>
+				</div>
+				<br>
+				<br>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+	<br>
+	<br>
+</div>
+{% endblock %}

@@ -1,0 +1,115 @@
+{%extends "base.html"%}
+{% block head %}
+<title>Cart</title>
+	
+<style>
+	p{
+		font-family: "Stencil Std,fantasy"; 
+	}
+
+	.head{
+		text-align: center; 
+		font-family: "Stencil Std,fantasy"; 
+		font-weight: 800;
+		}
+	h3{
+		text-align: center;
+	}
+	.container {
+		margin: auto;
+		resize: vertical;
+	}
+	.container2 {
+		border-radius: 5px;
+		background-color: lightgray;
+		padding: 40px;
+		position: vertical;
+		resize: vertical;
+		border-radius: 4px; 
+	}
+	table{
+		position: center;
+		font-family: "Stencil Std,fantasy";
+		background-color: white;
+		text-align: center;
+		font-size: 20px;
+	}
+	td,tr{
+		padding: 8px;
+	}
+	button{
+		text-align: center;
+		border-radius: 4px;
+		margin-left: 50%;
+		margin-right: 50%; 
+	}
+</style>
+{% endblock %}
+{% block main%}
+<!--Another container divide the sections-->
+<div class="container"  class=".col-sm-4" style="padding-left:15%; padding-right:15%; padding-top: 3%">
+	<div class="page">
+	<!--About Us Page-->
+	<h1 class="head">Cart</h1>
+	<br>
+		{% if session["username"] %}
+		<div class="container2">
+			<form action="/cart" method="GET">
+				<table border="2">
+				<tr>
+					<th>User Name</th>
+					<td>{{session['username']}}</td>
+				</tr>
+				<tr>
+					<th>Product Name</th>
+					<td>{{session['pdName']}}</td>
+				</tr>
+				<tr>
+					<th>Product ID</th>
+					<td>{{session['pdID']}}</td>
+				</tr>
+				<tr>
+					<th>Product Information</th>
+					<td>{{session['pdInfo1']}}<br>
+					{{session['pdInfo2']}}<br>
+					{{session['pdInfo3']}}<br>
+					{{session['pdInfo4']}}<br>
+					{{session['pdInfo5']}}<br>
+					{{session['pdInfo6']}}<br>
+					{{session['pdInfo7']}}<br>
+					{{session['pdInfo8']}}<br>
+					{{session['pdInfo9']}}<br>
+					{{session['pdInfo10']}}<br>
+					{{session['pdInfo11']}}<br>
+					{{session['pdInfo12']}}<br>
+					{{session['pdInfo13']}}</td>
+				</tr>
+				<tr>
+					<th>Price ($)</th>
+					<td>{{session['pdPrice']}}</td>
+				</tr>
+				<tr>
+					<th>Time</th>
+					<td>{{session['pdTime']}}</td>
+				</tr>
+				</table>
+			</form>
+			<form action="/order" method="POST">
+				<div class="checkbox" required>
+				<label for="payment">Payment Method:    </label>
+    			<input type="radio" name="payment" id="payment" value="Visa">Visa</label>
+    			<input type="radio" name="payment" id="payment" value="Master">Master</label>
+    			<input type="radio" name="payment" id="payment" value="Paypal">Paypal</label>
+    			</div>
+    			<button type="submit" value="Submit">Confirm</button>
+			</form>
+		</div>
+		</div>
+		{% else %}
+		<h3>You Need To Login.</h3>
+		{% endif %}
+	</div>
+	<br><br><br><br>
+	
+</div>
+{% endblock %}
