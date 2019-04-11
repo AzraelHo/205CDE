@@ -9,27 +9,34 @@
 {% block main%}
 <!--Container divide the sections-->
 <div class="container"  class=".col-sm-4" style="padding-left:20%; padding-right:20%; padding-top: 3% ">
-	<!--Login-->
+	<!--Admin-->
 	<div class="page">
-		<!--Contact Us Page-->
-		<button style="float:right; border-radius: 4px;"><a class="nav-link" href="{{url_for('logout')}}">Logout Admin</a></button>
 		<h1 class="head">Admin page</h1>
 
 		<br>
 		<div class="container">
-			<form action="/admin" method="POST">
+			<form action="{{url_for('checkuser', arg='searching')}}" method="POST">
 				<div class="form-group">
-					<label for="userID">Search user ID:</label>
-					<input type="text" id="userID" name="userID">
+					<label for="userIE">Search user ID or Email:</label>
+					<input type="text" id="userIE" name="userIE">
 				</div>
 				<input type="submit" value="Submit">
 			</form>
-			<form action="/admin" method="GET">
+			<form action="{{url_for('checkuser', arg='searching')}}" method="POST">
 				<div>
-					<p>{{session['userinfo']}}</p>
+					{% if userinfo %}
+					<p>UserID: {{userinfo[0]}}</p>
+					<p>UserName: {{userinfo[1]}}</p>
+					<p>First Name: {{userinfo[2]}}</p>
+					<p>Last Name: {{userinfo[3]}}</p>
+					<p>Email: {{userinfo[4]}}</p>
+					<p>Phone No.: {{userinfo[5]}}</p>
+					<p>Password: {{userinfo[6]}}</p>
+					{% endif %}
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
 {% endblock %}
+
