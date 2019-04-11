@@ -54,7 +54,8 @@ def login():
 
 		if email == 'admin' and pwd =='admin':
 			flash("Wellcome Admin!","success")
-			return render_template('admin.html')
+			session['admin'] = 'Yes'
+			return redirect(url_for('checkuser',arg='home'))
 		elif custemail is None:
 			flash("Email not found","danger")
 			return render_template("login.html")
@@ -202,23 +203,30 @@ def order():
 			flash("Payment Success, please check your email.","success")
 			return render_template('index.html')
 
-@app.route("/admin", methods=['GET','POST'])
-def checkuserID():
+@app.route("/admin/<path:arg>", methods=['GET','POST'])
+def checkuser(arg):
 	if request.method == "POST":
-		userID = request.form.get('userID')
+		if arg == 'searching':
+			userIE = str(request.form.get('userIE'))
+			if '@' not in userIE:
+				print(userIE)
+				cursor = db.cursor()
+				sql = ("SELECT * FROM `customer_info` WHERE `userID` = '"+userIE+"'")
+				cursor.execute(sql)
+				userinfolist = cursor.fetchone()
+				return render_template('admin.html', userinfo=userinfolist)
 
-		cursor = db.cursor()
-		sql = ("SELECT * FROM `customer_info` WHERE `userID` = '"+userID+"'")
-		cursor.execute(sql)
-		db.commit()
+			else:
+				print(userIE)
+				cursor = db.cursor()
+				sql = ("SELECT * FROM `customer_info` WHERE `email` = '"+userIE+"'")
+				cursor.execute(sql)
+				userinfolist = cursor.fetchone()
+				return render_template('admin.html', userinfo=userinfolist)
 
-		userinfolist = cursor.fetchone()
-		session['userinfo'] = userinfolist
+	 
+	if arg == 'home':
 		return render_template('admin.html')
-
-
-
-
 
 
 if __name__ == "__main__":
